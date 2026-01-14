@@ -1,29 +1,15 @@
 ---
-// Parte do Javascript (pode deixar vazio por enquanto)
+import Layout from "../layouts/Layout.astro";
+import Navbar from "../components/Navbar.astro";
+import Hero from "../components/Hero.astro";
+import Services from "../components/Services.astro";
 ---
 
-<html lang="pt-br">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<title>Sync Studio Tech</title>
-	</head>
-	<body class="bg-slate-900 h-screen flex items-center justify-center">
-		<div class="text-center">
-			<h1
-				class="text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-emerald-400 mb-4"
-			>
-				Sync Studio Tech
-			</h1>
-			<p class="text-slate-400 text-xl">
-				Infraestrutura pronta. Hora de codar. 🚀
-			</p>
-			<button
-				class="mt-8 px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-lg font-semibold transition-all"
-			>
-				Começar Projeto
-			</button>
-		</div>
-	</body>
-</html>
+<Layout title="Início">
+	<Navbar />
+
+	<main>
+		<Hero />
+		<Services />
+	</main>
+</Layout>
