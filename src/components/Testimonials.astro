@@ -1,0 +1,103 @@
+---
+const testimonials = [
+    {
+        name: "Mariana Souza",
+        treatment: "Invisalign",
+        text: "Simplesmente encantada! O tratamento com Invisalign foi super tranquilo e o resultado ficou perfeito. A Dra. Ana é muito atenciosa.",
+        stars: 5,
+        initial: "M",
+    },
+    {
+        name: "Carlos Eduardo",
+        treatment: "Implante Dentário",
+        text: "Tinha muito medo de dentista, mas a equipe me deixou super confortável. Fiz dois implantes e não senti dor nenhuma. Recomendo de olhos fechados!",
+        stars: 5,
+        initial: "C",
+    },
+    {
+        name: "Fernanda Lima",
+        treatment: "Clareamento",
+        text: "Ambiente impecável e tecnologia de ponta. Fiz o clareamento a laser e amei o resultado logo na primeira sessão.",
+        stars: 5,
+        initial: "F",
+    },
+];
+---
+
+<section id="depoimentos" class="py-20 bg-slate-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-3xl mx-auto mb-16">
+            <div
+                class="inline-flex items-center justify-center px-4 py-1.5 mb-6 rounded-full bg-blue-100 text-blue-700 font-semibold text-sm"
+            >
+                ⭐ Avaliações 5 Estrelas
+            </div>
+            <h2 class="text-3xl font-bold text-slate-900 sm:text-4xl mb-4">
+                O que nossos pacientes dizem
+            </h2>
+            <p class="text-lg text-slate-600">
+                Histórias reais de sorrisos transformados no nosso consultório.
+            </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {
+                testimonials.map((item) => (
+                    <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-100 hover:shadow-md transition-shadow relative">
+                        <div class="absolute top-6 right-8 text-slate-100">
+                            <svg
+                                width="40"
+                                height="40"
+                                viewBox="0 0 24 24"
+                                fill="currentColor"
+                            >
+                                <path d="M14.017 21L14.017 18C14.017 16.8954 14.9124 16 16.017 16H19.017C19.5693 16 20.017 15.5523 20.017 15V9C20.017 8.44772 19.5693 8 19.017 8H15.017C14.4647 8 14.017 8.44772 14.017 9V11C14.017 11.5523 13.5693 12 13.017 12H12.017V5H22.017V15C22.017 18.3137 19.3307 21 16.017 21H14.017ZM5.0166 21L5.0166 18C5.0166 16.8954 5.91203 16 7.0166 16H10.0166C10.5689 16 11.0166 15.5523 11.0166 15V9C11.0166 8.44772 10.5689 8 10.0166 8H6.0166C5.46432 8 5.0166 8.44772 5.0166 9V11C5.0166 11.5523 4.56889 12 4.0166 12H3.0166V5H13.0166V15C13.0166 18.3137 10.3303 21 7.0166 21H5.0166Z" />
+                            </svg>
+                        </div>
+
+                        <div class="flex text-yellow-400 mb-4">
+                            {[...Array(item.stars)].map(() => (
+                                <svg
+                                    class="w-5 h-5"
+                                    fill="currentColor"
+                                    viewBox="0 0 20 20"
+                                >
+                                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                                </svg>
+                            ))}
+                        </div>
+
+                        <p class="text-slate-600 mb-6 italic relative z-10">
+                            "{item.text}"
+                        </p>
+
+                        <div class="flex items-center mt-auto">
+                            <div class="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 font-bold mr-3">
+                                {item.initial}
+                            </div>
+                            <div>
+                                <p class="font-bold text-slate-900 text-sm">
+                                    {item.name}
+                                </p>
+                                <p class="text-xs text-slate-500">
+                                    {item.treatment}
+                                </p>
+                            </div>
+                            <img
+                                src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg"
+                                alt="Google"
+                                class="w-5 h-5 ml-auto opacity-50"
+                            />
+                        </div>
+                    </div>
+                ))
+            }
+        </div>
+
+        <div class="text-center mt-12">
+            <a href="#" class="text-blue-600 font-semibold hover:underline">
+                Ver todas as avaliações no Google Maps &rarr;
+            </a>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,81 @@
+---
+const faqs = [
+    {
+        question: "O tratamento de implante dói?",
+        answer: "Não! Hoje utilizamos anestesia computadorizada e técnicas minimamente invasivas. A maioria dos pacientes relata desconforto mínimo, comparável a uma extração simples, e volta à rotina no dia seguinte.",
+    },
+    {
+        question: "Quais convênios vocês aceitam?",
+        answer: "Trabalhamos com sistema de reembolso para a maioria dos segurados (Bradesco, Amil, SulAmérica). Nossa equipe cuida de toda a burocracia para você receber o valor de volta sem dor de cabeça.",
+    },
+    {
+        question: "Quanto tempo dura o clareamento dental?",
+        answer: "Os resultados podem durar de 1 a 3 anos, dependendo dos hábitos do paciente (café, vinho, cigarro). Recomendamos uma manutenção anual simples para manter o brilho.",
+    },
+    {
+        question: "É possível parcelar o tratamento?",
+        answer: "Sim! Facilitamos o pagamento em até 12x no cartão de crédito ou boleto bancário mediante aprovação. Nosso foco é viabilizar o seu sonho.",
+    },
+];
+---
+
+<section id="faq" class="py-20 bg-white">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl font-bold text-slate-900 sm:text-4xl mb-4">
+                Dúvidas Frequentes
+            </h2>
+            <p class="text-lg text-slate-600">
+                Tire suas dúvidas antes mesmo de agendar.
+            </p>
+        </div>
+
+        <div class="space-y-4">
+            {
+                faqs.map((faq, index) => (
+                    <div class="border border-slate-200 rounded-lg overflow-hidden">
+                        <button
+                            class="faq-btn w-full px-6 py-4 text-left bg-slate-50 hover:bg-slate-100 flex justify-between items-center transition-colors focus:outline-none"
+                            aria-expanded="false"
+                        >
+                            <span class="font-semibold text-slate-800">
+                                {faq.question}
+                            </span>
+                            <svg
+                                class="w-5 h-5 text-slate-500 transform transition-transform duration-300"
+                                fill="none"
+                                viewBox="0 0 24 24"
+                                stroke="currentColor"
+                            >
+                                <path
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    stroke-width="2"
+                                    d="M19 9l-7 7-7-7"
+                                />
+                            </svg>
+                        </button>
+
+                        <div class="faq-answer hidden bg-white px-6 py-4 text-slate-600 border-t border-slate-100">
+                            <p>{faq.answer}</p>
+                        </div>
+                    </div>
+                ))
+            }
+        </div>
+    </div>
+</section>
+
+<script>
+    const buttons = document.querySelectorAll(".faq-btn");
+
+    buttons.forEach((button) => {
+        button.addEventListener("click", () => {
+            const answer = button.nextElementSibling;
+            answer?.classList.toggle("hidden");
+
+            const icon = button.querySelector("svg");
+            icon?.classList.toggle("rotate-180");
+        });
+    });
+</script>
